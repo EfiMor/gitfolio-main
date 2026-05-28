@@ -1,250 +1,241 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const basePath = process.env.NODE_ENV === "production" ? "/your-repo-name" : "";
-
 export default function Home() {
   return (
-      <div className="min-h-screen bg-[#050510] text-cyan-50 font-mono overflow-x-hidden">
-
+      <div className="min-h-screen bg-[#050510] text-cyan-50 font-mono">
         {/* NAV */}
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050510]/80 backdrop-blur-md border-b border-cyan-900/30">
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <Link href="/" className="text-cyan-300 font-bold tracking-widest">
-              AI PORTFOLIO // ENEMY SYSTEM
+            <Link href="/" className="text-cyan-300 font-bold">
+              VOICEBOX AI PORTFOLIO
             </Link>
 
             <div className="flex gap-6 text-xs uppercase text-cyan-700">
               <Link href="#intro">Intro</Link>
               <Link href="#process">Process</Link>
-              <Link href="#ai">AI System</Link>
-              <Link href="#sources">Sources</Link>
-              <Link href="#ethics">Ethics</Link>
+              <Link href="#system">AI System</Link>
+              <Link href="#collab">Samarbete</Link>
+              <Link href="#time">Tid</Link>
+              <Link href="#sources">Källor</Link>
+              <Link href="#ethics">Etik</Link>
+              <Link href="#reflection">Reflektion</Link>
             </div>
           </div>
         </nav>
 
-        <main className="max-w-5xl mx-auto px-6 pt-28 pb-40 space-y-44">
+        <main className="max-w-5xl mx-auto px-6 pt-28 pb-40 space-y-40">
 
-          {/* ===================== INTRO ===================== */}
-          <section id="intro" className="space-y-12">
+          {/* ================= INTRO ================= */}
+          <section id="intro" className="space-y-10">
             <h1 className="text-5xl font-bold text-white">
-              Enemy AI System <span className="text-cyan-400">/ Behavior Trees + A*</span>
+              VOICEBOX — Enemy AI System
             </h1>
 
-            <p className="text-cyan-100/70 leading-relaxed text-lg">
-              Detta projekt utgör en central del av ett större spelutvecklingsprojekt där jag ansvarat
-              för implementationen av fiende-AI-systemet. Systemet är byggt kring Behavior Trees och
-              A*-pathfinding i Unity och syftar till att skapa responsiva, speltestbara och modulära
-              fiender som kan reagera dynamiskt på spelaren.
+            <p className="text-cyan-100/70 text-lg leading-relaxed">
+              VOICEBOX är ett co-op pusselspel där spelarens röst och proximity chat är en central
+              mekanik. Spelet utspelar sig i en procedurgenererad nöjespark där spelare måste
+              samarbeta för att lösa pussel och undvika fiender.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Redan i tidiga designfaser identifierades AI som en kritisk komponent för spelets upplevelse,
-              eftersom fienderna inte bara fungerar som hinder utan också som system som styr tempo,
-              spänning och spelarens rörelsemönster. Detta innebar att AI-designen behövde balansera
-              teknisk korrekthet med spelupplevelse och “feel”.
+              Min roll i projektet har varit att utveckla spelets fiende-AI. Systemet bygger på
+              Behavior Trees och A*-pathfinding i Unity. Fokus har varit att skapa fiender som är
+              funktionella, responsiva och anpassningsbara till spelets iterativa designprocess.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Projektet har genomförts iterativt med flera omarbetningar av både beteendeträd och
-              pathfinding-logik, där varje iteration baserats på speltestresultat och interna tester.
-              Detta har gjort att AI-systemet utvecklats i takt med spelets behov snarare än enligt
-              en fast plan, vilket är typiskt för spel-AI-utveckling.
+              AI-systemet är inte bara en teknisk komponent, utan en central del av spelets
+              spelupplevelse. Fienderna styr tempo, stressnivå och hur spelare kommunicerar
+              med varandra i co-op-situationer.
             </p>
-
-            <div className="border border-cyan-800 p-4">
-              <p className="text-xs text-cyan-500 mb-2">[GIF: Full enemy loop gameplay]</p>
-              <div className="h-64 bg-cyan-950/30 flex items-center justify-center text-cyan-700">
-                INSERT GAMEPLAY GIF HERE
-              </div>
-            </div>
           </section>
 
-          {/* ===================== PROCESS ===================== */}
-          <section id="process" className="space-y-12">
+          {/* ================= PROCESS ================= */}
+          <section id="process" className="space-y-10">
             <h2 className="text-3xl text-fuchsia-400 font-bold">
-              // Development Process & Iteration
+              Utvecklingsprocess
             </h2>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Utvecklingsprocessen kan delas in i tre huvudsakliga faser: prototypfas, expansionsfas
-              och stabiliseringsfas. I prototypfasen implementerades enkla beteenden såsom patrullering
-              och direkt förföljelse för att snabbt uppnå en testbar version av AI-systemet.
+              Utvecklingen följde en iterativ arbetsmetod där AI-systemet byggdes i flera steg:
+              först enkla prototyper, sedan utökad funktionalitet och slutligen stabilisering
+              inför speltest.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              I expansionsfasen introducerades mer komplex logik såsom ljudbaserad perception,
-              förbättrad state-hantering och A*-pathfinding. Detta innebar en tydlig ökning i systemets
-              komplexitet, där fler beroenden mellan noder i beteendeträdet skapades.
+              I den första fasen implementerades grundläggande patrullering och direkt förföljelse.
+              Syftet var inte kvalitet utan snabb validering av att AI-systemet fungerade i spelmiljö.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              En återkommande utmaning under utvecklingen var att undvika överdesign. Eftersom systemet
-              byggdes parallellt med speltestning uppstod ofta situationer där nya problem introducerades
-              samtidigt som gamla problem löstes. Detta gjorde att jag behövde prioritera stabilitet
-              framför perfektion.
+              I nästa fas introducerades ljudsystem, förbättrad state-logik och A* pathfinding.
+              Detta ökade komplexiteten kraftigt och ledde till flera iterationer av Behavior Trees
+              där noder behövde refaktoreras för modularitet.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Ett konkret exempel är “investigate sound”-noden, som initialt saknade fallback-logik.
-              Detta ledde till att fiender ibland fastnade i undersökningslägen. Lösningen blev att
-              införa tidsbaserade transitions och säkerhetsvillkor i beteendeträdet.
+              Ett konkret exempel är “investigate sound”-noden som initialt saknade fallback.
+              Detta ledde till att fiender fastnade i ett tillstånd. Problemet löstes genom
+              tidsbaserade transitions och säkerhetsvillkor.
             </p>
 
-            <div className="border border-fuchsia-900 p-4">
-              <p className="text-xs text-fuchsia-400 mb-2">[GIF: Behavior tree debugging + node switching]</p>
-              <div className="h-64 bg-fuchsia-950/20"></div>
-            </div>
+            <p className="text-cyan-100/70 leading-relaxed">
+              En viktig lärdom från processen är att spel-AI inte kan designas isolerat.
+              Systemet måste kontinuerligt testas i faktisk spelmiljö eftersom emergent beteende
+              uppstår först när system interagerar med andra delar av spelet.
+            </p>
           </section>
 
-          {/* ===================== AI SYSTEM ===================== */}
-          <section id="ai" className="space-y-12">
+          {/* ================= AI SYSTEM ================= */}
+          <section id="system" className="space-y-10">
             <h2 className="text-3xl text-cyan-400 font-bold">
-              // AI Architecture & Technical Implementation
+              AI System & Implementation
             </h2>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              AI-systemet är uppbyggt kring Behavior Trees, vilket möjliggör en hierarkisk struktur
-              där beslut delas upp i små, återanvändbara noder. Detta ger en tydlig separation mellan
-              perception, beslutslogik och handlingar, vilket underlättar felsökning och vidareutveckling.
+              AI-systemet är uppbyggt kring Behavior Trees i Unitys Behavior-paket.
+              Detta möjliggör modulär design där varje nod representerar ett isolerat beteende.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Den mindre fienden fungerar som ett grundläggande trycksystem i spelet och består av
-              relativt enkla beteenden: patrullera mellan punkter, upptäcka spelaren inom synfält,
-              samt övergå till förföljelse via pathfinding. Trots sin enkelhet är denna AI kritisk
-              för att skapa konstant spelspänning.
+              Den mindre fienden fungerar som ett konstant tryck i spelvärlden. Den använder
+              patrullering, spelar-detektion och enkel pathfinding. Trots enkelhet är den viktig
+              för pacing och spelspänning.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Hybridfienden är mer komplex och fungerar som ett temporärt “hot-system”. Den triggas
-              av ljudsignaler och söker ett område under en begränsad tidsperiod. Om ingen spelare
-              hittas avbryts jakten automatiskt, vilket förhindrar att fienden blir övermäktig eller
-              stör spelets pacing.
+              Den mer avancerade “elefantspindel”-fienden är ett temporärt hot-system. Den triggas
+              av ljud, söker i ett område och försvinner om spelaren inte hittas inom en viss tid.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              A*-pathfinding används för att säkerställa att fiender kan navigera i en grid-baserad
-              miljö där varje tile har en passability-flagga. En central teknisk utmaning var att
-              undvika “dead paths”, vilket löstes genom extra validering av måltiles innan pathfinding
-              initieras.
+              A*-pathfinding används på en grid-baserad karta där varje tile har en passability-flagga.
+              Ett centralt problem var att fiender ibland valde ogiltiga mål, vilket löstes genom
+              extra validering innan path calculation.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="border border-cyan-800 p-3">
-                <p className="text-xs text-cyan-500">[GIF: AI chasing player]</p>
-                <div className="h-48 bg-cyan-950/20"></div>
-              </div>
-
-              <div className="border border-fuchsia-800 p-3">
-                <p className="text-xs text-fuchsia-400">[GIF: Sound investigation state]</p>
-                <div className="h-48 bg-fuchsia-950/20"></div>
-              </div>
-            </div>
+            <p className="text-cyan-100/70 leading-relaxed">
+              En viktig designprincip har varit modularitet. Flera noder återanvänds mellan fiender,
+              vilket minskar kodduplicering och gör systemet mer skalbart.
+            </p>
           </section>
 
-          {/* ===================== SOURCES ===================== */}
-          <section id="sources" className="space-y-12">
+          {/* ================= COLLAB ================= */}
+          <section id="collab" className="space-y-10">
             <h2 className="text-3xl text-yellow-400 font-bold">
-              // Theory, Research & Critical Evaluation
+              Samarbete med andra discipliner
             </h2>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Källorna i detta projekt består av både akademiska publikationer och branschmaterial
-              för att ge en balans mellan teori och praktisk implementation. Detta är särskilt viktigt
-              inom spel-AI där industriella lösningar ofta skiljer sig från akademiska modeller.
+              AI-systemet utvecklades i nära samspel med andra discipliner såsom 2D-grafik, animation
+              och level design. Detta påverkade implementationen direkt.
             </p>
 
-            <div className="space-y-8 text-cyan-100/70">
-              <div>
-                <p className="text-cyan-300 font-bold">Gugliermo et al. (2024)</p>
-                <p>
-                  Denna peer-reviewed artikel användes som teoretisk grund för att förstå hur
-                  Behavior Trees kan utvärderas systematiskt. Särskilt viktiga begrepp var modularitet,
-                  korrekthet och robusthet. Dessa användes direkt i designval kring nodstruktur och
-                  teststrategier.
-                </p>
-                <p>
-                  En viktig insikt från artikeln var att modularitet inte bara handlar om kodstruktur,
-                  utan också om hur enkelt systemet kan ändras utan att skapa oväntade sidoeffekter.
-                </p>
-              </div>
+            <p className="text-cyan-100/70 leading-relaxed">
+              Ett tydligt exempel är elefantspindelns animationer, där implementationen behövde
+              anpassas efter hur animationssystemet byggdes av grafikern. Detta ledde till justeringar
+              i state transitions i Behavior Tree.
+            </p>
 
-              <div>
-                <p className="text-cyan-300 font-bold">Rabin (2014)</p>
-                <p>
-                  Användes som praktisk referens för implementering av spel-AI. Boken innehåller
-                  konkreta exempel från industrin och har varit central för förståelsen av hur
-                  beteendebaserad AI används i riktiga spelproduktioner.
-                </p>
-              </div>
+            <p className="text-cyan-100/70 leading-relaxed">
+              Level design påverkade också AI:n eftersom procedurgenererade banor krävde robust
+              pathfinding och fallback-logik när fiender inte kunde nå vissa tiles.
+            </p>
 
-              <div>
-                <p className="text-cyan-300 font-bold">Simpson (2014)</p>
-                <p>
-                  Användes främst som en introduktion till Behavior Trees och hjälpte till att
-                  visualisera hur noder interagerar i enklare system. Trots att den inte är peer-reviewed
-                  gav den en viktig konceptuell grund.
-                </p>
-              </div>
-            </div>
+            <p className="text-cyan-100/70 leading-relaxed">
+              Ljuddesignen integrerades direkt i AI-systemet genom eventbaserad kommunikation.
+              Detta gjorde att fiender kunde reagera på spelare utan direkt visuell kontakt.
+            </p>
           </section>
 
-          {/* ===================== ETHICS ===================== */}
-          <section id="ethics" className="space-y-12">
+          {/* ================= TIME ================= */}
+          <section id="time" className="space-y-10">
             <h2 className="text-3xl text-purple-400 font-bold">
-              // Ethical, Societal & Design Considerations
+              Tid, prioritering och arbetsfördelning
             </h2>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              AI-systemets design påverkar direkt spelupplevelsen och därmed också spelarens
-              emotionella respons. En viktig designprincip har därför varit att undvika både
-              överväldigande och passiv AI. Detta kräver en balans mellan förutsägbarhet och dynamik.
+              Den största delen av tiden lades på debugging och iteration snarare än ny funktionalitet.
+              AI-system tenderar att generera oväntade edge cases som kräver kontinuerlig justering.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Eftersom spelet riktar sig till en yngre vuxen målgrupp (15+), har hänsyn tagits
-              till hur stress och press upplevs i co-op-situationer. Förlustmekanik och fiendebeteenden
-              är därför designade för att skapa spänning utan att upplevas som orättvisa.
+              En uppskattning av arbetsfördelning:
+              cirka 40% implementation, 40% debugging och iteration, 20% design och planering.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Co-op-dynamiken innebär också att AI indirekt påverkar social interaktion mellan spelare.
-              Fiendernas beteenden är därför utformade för att uppmuntra kommunikation och samarbete
-              snarare än individuell prestation.
-            </p>
-
-            <p className="text-cyan-100/70 leading-relaxed">
-              Ett medvetet etiskt val har varit att använda abstrakta och fiktiva fiender istället för
-              realistiska eller kulturellt laddade representationer. Detta minskar risken för problematisk
-              tolkning och gör systemet mer universellt.
+              En tydlig lärdom är att initial tidsplanering underskattade komplexiteten i
+              Behavior Tree-debugging och integration med andra system.
             </p>
           </section>
 
-          {/* ===================== CONCLUSION ===================== */}
-          <section className="space-y-10">
-            <h2 className="text-3xl text-cyan-400 font-bold">
-              // Final Reflection & Conclusion
+          {/* ================= SOURCES ================= */}
+          <section id="sources" className="space-y-10">
+            <h2 className="text-3xl text-yellow-400 font-bold">
+              Källor och teori
             </h2>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Sammanfattningsvis har projektet resulterat i ett fungerande men iterativt utvecklat
-              AI-system baserat på Behavior Trees och A*-pathfinding. Systemet uppfyller kraven på
-              funktionalitet och spelbarhet, men har medvetet inte överoptimerats för perfektion
-              på grund av tidsbegränsningar.
+              Projektet bygger på både akademiska och branschnära källor för att kombinera teori
+              och praktisk implementation.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Den viktigaste tekniska lärdomen är att AI-utveckling i spel kräver kontinuerlig
-              testning i verklig miljö, eftersom teoretiskt korrekta system ofta beter sig oväntat
-              när de interagerar med spelmekanik.
+              Gugliermo et al. (2024) användes för att analysera Behavior Trees utifrån modularitet,
+              korrekthet och robusthet. Dessa begrepp användes direkt i designbeslut kring AI-arkitektur.
             </p>
 
             <p className="text-cyan-100/70 leading-relaxed">
-              Den viktigaste designmässiga lärdomen är att “good enough AI” ofta är bättre än
-              “perfect AI” i spelutveckling, eftersom spelupplevelse och pacing väger tyngre än
-              teknisk perfektion.
+              Rabin (2014) gav praktisk industrikontext kring hur spel-AI implementeras i verkliga projekt.
+            </p>
+
+            <p className="text-cyan-100/70 leading-relaxed">
+              Simpson (2014) användes som introduktion till Behavior Trees och för att förstå
+              grundläggande struktur och flöde.
+            </p>
+          </section>
+
+          {/* ================= ETHICS ================= */}
+          <section id="ethics" className="space-y-10">
+            <h2 className="text-3xl text-cyan-400 font-bold">
+              Etiska och designmässiga överväganden
+            </h2>
+
+            <p className="text-cyan-100/70 leading-relaxed">
+              AI-designen påverkar direkt spelarens emotionella upplevelse. Därför har balans
+              mellan utmaning och rättvisa varit central.
+            </p>
+
+            <p className="text-cyan-100/70 leading-relaxed">
+              Spelet riktar sig till 15+ och designen tar hänsyn till stressnivåer i co-op-miljöer.
+            </p>
+
+            <p className="text-cyan-100/70 leading-relaxed">
+              Fiender är abstrakta och fiktiva för att undvika problematiska representationer.
+            </p>
+          </section>
+
+          {/* ================= REFLECTION ================= */}
+          <section id="reflection" className="space-y-10">
+            <h2 className="text-3xl text-cyan-400 font-bold">
+              Reflektion och lärdomar
+            </h2>
+
+            <p className="text-cyan-100/70 leading-relaxed">
+              Det viktigaste resultatet är att AI i spel måste vara speltestdrivet snarare än
+              teoretiskt perfekt. Systemet utvecklas genom iteration snarare än förplanering.
+            </p>
+
+            <p className="text-cyan-100/70 leading-relaxed">
+              En annan lärdom är att “good enough AI” ofta är mer effektivt än överkomplexa system
+              som är svåra att underhålla och debugga.
+            </p>
+
+            <p className="text-cyan-100/70 leading-relaxed">
+              Om projektet gjordes om skulle en egen implementation av Behavior Trees övervägas
+              för att få full kontroll över systemets flexibilitet.
             </p>
           </section>
 
