@@ -58,7 +58,7 @@ export default function Home() {
             </p>
 
             <div className="space-y-2">
-              <p className="text-xs text-cyan-500">GAMEPLAY OVERVIEW</p>
+              <p className="text-xs text-cyan-500">[GAMEPLAY OVERVIEW]</p>
               <div className="h-112 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10">
                 <img
                     src="/gitfolio-main/gifs/enemy-loop.gif"
@@ -83,13 +83,6 @@ export default function Home() {
             </p>
 
             <p>
-              I praktiken betydde det att varje fiende behövde kunna reagera på både synliga och ljudbaserade
-              stimuli, men utan att skapa ett system som blev för komplext att felsöka. Eftersom banorna är
-              procedurellt genererade kan inte AI:n vara beroende av fasta kartvägar eller statiskt placerade
-              navpunkter. Den måste i stället fungera i olika layout-varianter och ändå behålla samma grundlogik.
-            </p>
-
-            <p>
               The map is procedurally generated which means that the enemies can not rely on navigation
               points. Instead, the enemies must be able to work in different variations of the game map 
               without choosing the wrong behaviour or getting stuck. This has caused me to test the
@@ -98,8 +91,8 @@ export default function Home() {
             </p>
 
             <div className="space-y-2">
-              <p className="text-xs text-cyan-500">[ AI SYSTEM DIAGRAMS ]</p>
-              <div className="h-72 border border-cyan-800 rounded-sm bg-cyan-950/10 grid grid-cols-2 gap-2 p-2">
+              <p className="text-xs text-cyan-500">[AI SYSTEM DIAGRAMS]</p>
+              <div className="h-112 border border-cyan-800 rounded-sm bg-cyan-950/10 grid grid-cols-2 gap-2 p-2">
                 <div className="relative">
                   <Image
                       src="/gitfolio-main/images/behavior-tree-small-enemy.png"
@@ -130,7 +123,7 @@ export default function Home() {
             <p>
               During development I worked iteratively, meaning I created simple but working versions
               of the enemies first before trying to improve them. This choice allowed for early 
-              playtesting, which helped me find bugs and other things to improve upon.
+              play testing, which helped me find bugs and other things to improve upon.
             </p>
 
             <p>
@@ -142,7 +135,7 @@ export default function Home() {
 
             <p>
               I also had to reprioratize a lot during development. For example when certain playtesters
-              found that enemies were getting stuck or reacting incorectly, I had to focus on fixing
+              found that enemies were getting stuck or reacting incorrectly, I had to focus on fixing
               those issues instead of adding new behaviours. This meant that certain behaviours had to wait,
               but it made the new enemy version more usable for testing.
             </p>
@@ -150,11 +143,11 @@ export default function Home() {
             <p>
               Another important part of the process was that I worked on making a few nodes more modular.
               This allowed the same nodes to be reused between the two enemy types. This reusability
-              was imporant because it reduced development time and the risk of unexepected bugs.
+              was important because it reduced development time and the risk of unexepected bugs.
             </p>
 
             <div className="space-y-2">
-              <p className="text-xs text-cyan-500">[ HYBRID ENEMY ]</p>
+              <p className="text-xs text-cyan-500">[HYBRID ENEMY]</p>
               <div className="h-72 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10 relative">
                 <Image
                     src="/gitfolio-main/images/Hybrid.png"
@@ -173,7 +166,7 @@ export default function Home() {
             </h2>
 
             <p>
-              The AI system is built using Behavior Trees specifically Unitys Behavior package,
+              The AI system is built using behavior trees specifically Unitys Behavior package,
               as this approach allows for fine control of the enemies behaviour and modularity.
               This choice allowed for quick iteration during development and effective debugging.
             </p>
@@ -181,7 +174,7 @@ export default function Home() {
             <p>
               The small enemy follows a continuous behavioral loop: patrol → detect → 
               chase → investigate sound → return to patrol. The small enemy has this 
-              behavioral loop so that players do not feel too relax while playing the game.
+              behavioral loop so that players do not feel too relaxed while playing the game.
             </p>
 
             <p>
@@ -199,7 +192,7 @@ export default function Home() {
 
             <p>
               As I mentioned before I was using Unitys Behavior package for the creation of the enemies
-              Behaviour Trees. This provided a visual of the behaviour, which made it easier to debug 
+              behaviour trees. This provided a visual of the behaviour, which made it easier to debug 
               when a node did not transition to the expected node. At the same time it introduced
               limitations, as the package did not always allow me to do as I wanted. Meaning that
               I had to create scripts that could run certain logic for me before their results
@@ -255,15 +248,15 @@ export default function Home() {
             </p>
             
             <p>
-              Because the levels are procedurally generated, the AI needed to function 
-              independently of static level design, which increased the demands on
+              Because the levels are procedurally generated, the AI needed to work 
+              on randomly generated levels, which increased the demands on
               pathfinding and fallback logic.
             </p>
 
             <p>
               I also collaborated with the other programmer by trying to make sure that
               the enemies AI was sending certain events during for example capture of the player
-              or by communicating on how the enemy was going to navigate the map.
+              or discussed on how the enemy was going to navigate the map.
             </p>
 
             <p>
@@ -282,8 +275,8 @@ export default function Home() {
             </h2>
 
             <p>
-              FSM (Finite State Machine) was considered but rejected because the system quickly
-              became too complex when multiple behaviors were required.
+              FSM (Finite State Machine) was considered but rejected because the system would 
+              quickly become too complex when multiple behaviors would be required.
             </p>
 
             <p>
@@ -298,7 +291,7 @@ export default function Home() {
 
             <p>
               In retrospect, several alternative solutions were possible. For example, I could have 
-              built a fully custom Behavior Tree system instead of using Unity’s Behavior Package.
+              built a fully custom behavior tree system instead of using Unity’s Behavior Package.
               This would have provided greater flexibility, however it would also have required 
               more time to set up. That would have impacted the ability to create enemies that were
               working in time for example a playtest.
@@ -320,8 +313,8 @@ export default function Home() {
             <p>
               These concepts were directly applied in the design of the AI architecture, particularly
               in structuring the nodes and in testing the enemies to ensure that they work correctly.
-              I also used industry related sources to gain a practical understanding of how Behavior
-              Trees work.
+              I also used industry related sources to gain a practical understanding of how behavior
+              trees work.
             </p>
 
             <p>
