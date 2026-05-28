@@ -59,11 +59,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <p className="text-xs text-cyan-500">GAMEPLAY OVERVIEW</p>
-              <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
+              <div className="h-72 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10">
                 <img
                     src="/gitfolio-main/gifs/enemy-loop.gif"
                     alt="Enemy behaviour"
-                    className="w-full object-cover"
+                    className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -99,19 +99,24 @@ export default function Home() {
 
             <div className="space-y-2">
               <p className="text-xs text-cyan-500">[ AI SYSTEM DIAGRAMS ]</p>
-              <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
-                <Image
-                    src="/gitfolio-main/images/behavior-tree-small-enemy.png"
-                    alt="Small Enemy Behavior Tree visualization"
-                    fill
-                    className="object-contain"
-                />
-                <Image
-                    src="/gitfolio-main/images/behavior-tree-hybrid-enemy.png"
-                    alt="Hybrid Enemy Behavior Tree visualization"
-                    fill
-                    className="object-contain"
-                />
+              <div className="h-72 border border-cyan-800 rounded-sm bg-cyan-950/10 grid grid-cols-2 gap-2 p-2">
+                <div className="relative">
+                  <Image
+                      src="/gitfolio-main/images/behavior-tree-small-enemy.png"
+                      alt="Small enemy"
+                      fill
+                      className="object-contain"
+                  />
+                </div>
+
+                <div className="relative">
+                  <Image
+                      src="/gitfolio-main/images/behavior-tree-hybrid-enemy.png"
+                      alt="Hybrid enemy"
+                      fill
+                      className="object-contain"
+                  />
+                </div>
               </div>
             </div>
           </section>
@@ -150,12 +155,12 @@ export default function Home() {
 
             <div className="space-y-2">
               <p className="text-xs text-cyan-500">[ HYBRID ENEMY ]</p>
-              <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
+              <div className="h-72 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10 relative">
                 <Image
                     src="/gitfolio-main/images/Hybrid.png"
                     alt="hybrid enemy"
                     fill
-                    className="object-contain"
+                    className="object-contain p-2"
                 />
               </div>
             </div>
@@ -202,12 +207,12 @@ export default function Home() {
             </p>
 
             <div className="space-y-2">
-              <p className="text-xs text-cyan-500">[ ENEMY PATHFINDING]</p>
-              <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
+              <p className="text-xs text-cyan-500">[ENEMY PATHFINDING]</p>
+              <div className="h-72 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10">
                 <img
                     src="/gitfolio-main/gifs/Enemy-Navigation.gif"
                     alt="Enemy navigation"
-                    className="w-full object-cover"
+                    className="w-full h-full object-cover"
                 />
               </div>
             </div>
