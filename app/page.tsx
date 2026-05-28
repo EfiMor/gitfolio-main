@@ -16,11 +16,8 @@ export default function Home() {
               <Link href="#context">Project</Link>
               <Link href="#process">Development</Link>
               <Link href="#ai">AI</Link>
-              <Link href="#time">Time</Link>
               <Link href="#collab">Collab</Link>
-              <Link href="#alternatives">Alternatives</Link>
               <Link href="#sources">Sources</Link>
-              <Link href="#ethics">Ethics</Link>
               <Link href="#reflection">Reflection</Link>
             </div>
           </div>
@@ -28,7 +25,7 @@ export default function Home() {
 
         <main className="max-w-5xl mx-auto px-6 pt-28 pb-40 space-y-44">
 
-          {/* ================= INTRO ================= */}
+          {/* INTRO */}
           <section id="intro" className="space-y-10">
             <h1 className="text-5xl font-bold text-white">
               VOICEBOX <span className="text-cyan-400">Enemy AI System</span>
@@ -64,7 +61,7 @@ export default function Home() {
               <p className="text-xs text-cyan-500">GAMEPLAY OVERVIEW</p>
               <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
                 <img
-                    src="/gifs/enemy-loop.gif"
+                    src="/gitfolio-main/gifs/enemy-loop.gif"
                     alt="Enemy behaviour"
                     className="w-full object-cover"
                 />
@@ -104,13 +101,13 @@ export default function Home() {
               <p className="text-xs text-cyan-500">[ AI SYSTEM DIAGRAMS ]</p>
               <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
                 <Image
-                    src="/images/behavior-tree-small-enemy.png"
+                    src="/gitfolio-main/images/behavior-tree-small-enemy.png"
                     alt="Small Enemy Behavior Tree visualization"
                     fill
                     className="object-contain"
                 />
                 <Image
-                    src="/images/behavior-tree-hybrid-enemy.png"
+                    src="/gitfolio-main/images/behavior-tree-hybrid-enemy.png"
                     alt="Hybrid Enemy Behavior Tree visualization"
                     fill
                     className="object-contain"
@@ -155,7 +152,7 @@ export default function Home() {
               <p className="text-xs text-cyan-500">[ HYBRID ENEMY ]</p>
               <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
                 <Image
-                    src="/images/Hybrid.png"
+                    src="/gitfolio-main/images/Hybrid.png"
                     alt="hybrid enemy"
                     fill
                     className="object-contain"
@@ -208,7 +205,7 @@ export default function Home() {
               <p className="text-xs text-cyan-500">[ ENEMY PATHFINDING]</p>
               <div className="h-72 border border-cyan-800 rounded-sm flex items-center justify-center text-cyan-700 bg-cyan-950/10">
                 <img
-                    src="/gifs/Enemy-Navigation.gif"
+                    src="/gitfolio-main/gifs/Enemy-Navigation.gif"
                     alt="Enemy navigation"
                     className="w-full object-cover"
                 />
@@ -247,9 +244,8 @@ export default function Home() {
 
             <p>
               The AI system was highly dependent on animation and level design.
-              AI-systemet var starkt beroende av animationer, ljud och level design.
               Animations created by my groups 2D artist required precise synchronization 
-              with state transitions, which if not syncronized properly it would look 
+              with state transitions, which if not syncronized properly would look 
               weird.
             </p>
             
@@ -328,6 +324,16 @@ export default function Home() {
               modularity, correctness, and robustness though there were a few more properties. This made
               it possible not only to say that a behaviour tree “works,” but also to reason about why 
               it is good or not.
+            </p>
+            
+            <p>
+              Gugliermo, S., Domínguez, David., Iannotta, M., Stoyanov, T. & Schaffernicht, E. (2024). 
+              Evaluating behavior trees, Robotics and Autonomous Systems, 178. 
+              doi:10.1016/j.robot.2024.104714.
+              Champandard, A. & Dunstan, P. (2013). The Behavior Tree Starter Kit. Game AI Pro. 
+              Tillgänglig på: https://www.gameaipro.com/ (Accessed: 23 April 2026).
+              Simpson, C. (2014). Behavior trees for AI: How they work. Game Developer. 
+              Tillgänglig på: https://www.gamedeveloper.com/programming/behavior-trees-for-ai-how-they-work
             </p>
           </section>
 
