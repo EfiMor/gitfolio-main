@@ -59,7 +59,7 @@ export default function Home() {
 
             <div className="space-y-2">
               <p className="text-xs text-cyan-500">GAMEPLAY OVERVIEW</p>
-              <div className="h-72 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10">
+              <div className="h-112 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10">
                 <img
                     src="/gitfolio-main/gifs/enemy-loop.gif"
                     alt="Enemy behaviour"
@@ -208,7 +208,7 @@ export default function Home() {
 
             <div className="space-y-2">
               <p className="text-xs text-cyan-500">[ENEMY PATHFINDING]</p>
-              <div className="h-72 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10">
+              <div className="h-112 border border-cyan-800 rounded-sm overflow-hidden bg-cyan-950/10">
                 <img
                     src="/gitfolio-main/gifs/Enemy-Navigation.gif"
                     alt="Enemy navigation"
@@ -335,9 +335,13 @@ export default function Home() {
               Gugliermo, S., Domínguez, David., Iannotta, M., Stoyanov, T. & Schaffernicht, E. (2024). 
               Evaluating behavior trees, Robotics and Autonomous Systems, 178. 
               doi:10.1016/j.robot.2024.104714.
-              Champandard, A. & Dunstan, P. (2013). The Behavior Tree Starter Kit. Game AI Pro. 
+            </p>
+            <p>
+              Champandard, A. & Dunstan, P. (2013). The Behavior Tree Starter Kit. Game AI Pro.
               Tillgänglig på: https://www.gameaipro.com/ (Accessed: 23 April 2026).
-              Simpson, C. (2014). Behavior trees for AI: How they work. Game Developer. 
+            </p>
+            <p>
+              Simpson, C. (2014). Behavior trees for AI: How they work. Game Developer.
               Tillgänglig på: https://www.gamedeveloper.com/programming/behavior-trees-for-ai-how-they-work
             </p>
           </section>
